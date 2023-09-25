@@ -4,10 +4,13 @@ export const Navbar = () => {
   return (
     <>
       <nav style={{ textAlign: "center", margin: "30px 0" }}>
-        <Link to="/" style={{ padding: "0 10px", textDecoration: "none" }}>
+        <Link
+          to="/"
+          style={{ padding: "0 10px", textDecoration: "none", color: "white" }}
+        >
           Home
         </Link>
-        <Link to="/blogs" style={{ textDecoration: "none" }}>
+        <Link to="/blogs" style={{ textDecoration: "none", color: "white" }}>
           Blogs
         </Link>
       </nav>
