@@ -1,8 +1,12 @@
 import "./App.css";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
-import { Home } from "./components/Home";
-import { Blogs } from "./components/Blogs";
 import { Navbar } from "./components/Navbar";
+import { Home } from "./components/Home";
+import { lazy, Suspense } from "react";
+import  Blogs  from "./components/Blogs";  
+
+// const Blogs = lazy(() => import("./components/Blogs"));
+
 
 function App() {
   return (
@@ -10,8 +14,15 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}  />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/blogs"
+            element={
+              // <Suspense fallback={<Skeleton/>}> 
+                <Blogs />
+              // </Suspense>
+            }
+          />
         </Routes>
       </BrowserRouter>
     </div>
